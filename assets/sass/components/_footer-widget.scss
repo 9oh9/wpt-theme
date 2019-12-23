@@ -1,0 +1,44 @@
+/*------------------------------------*\
+  Components > Footer Widget
+\*------------------------------------*/
+
+.c-footer-widget {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: double($base-spacing-unit);
+  margin-bottom: double($base-spacing-unit);
+  background-color: $bg-white;
+  border: 1px solid $color-border;
+  border-radius: $global-border-radius;
+
+  &-wrap {
+    display: flex;
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: $base-spacing-unit + half($base-spacing-unit);
+    font-size: $font-size-medium;
+    font-weight: $font-weight-regular;
+    line-height: 1;
+
+    span {
+      background-color: $bg-white;
+      position: relative;
+      z-index: 1;
+      padding-right: $base-spacing-unit;
+    }
+
+    &:after {
+      content: '';
+      height: 1px;
+      background: $color-border;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 0%;
+    }
+  }
+}

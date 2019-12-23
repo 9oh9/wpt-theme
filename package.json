@@ -1,0 +1,50 @@
+{
+  "name": "bold",
+  "version": "1.2.1",
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "description": "Blog and Magazine Clean Ghost Theme",
+  "scripts": {
+    "postinstall": "bower install",
+    "build": "gulp build"
+  },
+  "dependencies": {
+    "concat": "^3.0.0",
+    "evil-icons": "^1.8.0",
+    "fs": "0.0.2",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-size": "^3.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.7",
+    "headroom.js": "^0.9.3",
+    "jshint": "^2.9.6",
+    "jshint-stylish": "^2.2.0",
+    "lunr": "^0.7.0",
+    "lunr-languages": "^1.0.0",
+    "prismjs": "^1.8.1"
+  },
+  "author": {
+    "name": "Aspire Themes",
+    "email": "aspirethemes@gmail.com",
+    "url": "https://aspirethemes.com/"
+  },
+  "config": {
+    "posts_per_page": 9
+  },
+  "devDependencies": {
+    "dart-sass": "^1.17.0",
+    "gulp": "^4.0.0"
+  }
+}

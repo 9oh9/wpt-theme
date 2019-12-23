@@ -1,0 +1,70 @@
+/*------------------------------------*\
+  Components > Tag
+\*------------------------------------*/
+
+.c-tag-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: quadruple($base-spacing-unit) $base-spacing-unit;
+
+  @include mq($from: tablet) {
+    padding: double($base-spacing-unit) $base-spacing-unit;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 33%;
+    }
+  }
+
+  @include mq($from: desktop) {
+    padding: 0;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background-color: $bg-dark-opacity;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: $color-white;
+    text-shadow: $text-shadow;
+    padding-right: $base-spacing-unit;
+    padding-left: $base-spacing-unit;
+
+    @include mq($from: tablet) {
+      max-width: 700px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: 0;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__name {
+    margin-bottom: 0;
+
+    @include mq($from: tablet) {
+      line-height: normal;
+      font-size: double($font-size-base);
+    }
+  }
+
+  &__description {
+    margin-top: half($base-spacing-unit);
+    margin-bottom: 0;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-small;
+  }
+}

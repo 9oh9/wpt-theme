@@ -1,0 +1,89 @@
+/*------------------------------------*\
+  Components > Author
+\*------------------------------------*/
+
+.c-author {
+  width: 100%;
+  padding: double($base-spacing-unit);
+  margin-bottom: double($base-spacing-unit);
+  background-color: $bg-gray;
+  border: 1px solid $color-border;
+  border-radius: $global-border-radius;
+
+  @include mq($until: tablet) {
+    text-align: center;
+  }
+
+  @include mq($from: tablet) {
+    display: flex;
+    align-items: center;
+  }
+
+  &__media {
+    @include mq($until: tablet) {
+      margin-bottom: $base-spacing-unit;
+    }
+
+    @include mq($from: tablet) {
+      margin-right: double($base-spacing-unit);
+    }
+  }
+
+  &__content {
+    @include mq($from: tablet) {
+      flex: 3;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: quadruple($base-spacing-unit) + double($base-spacing-unit);
+    height: quadruple($base-spacing-unit) + double($base-spacing-unit);
+    border-radius: 100%;
+
+    @include mq($until: tablet) {
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: half($base-spacing-unit);
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+  }
+
+  &__bio {
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+
+    @include mq($from: tablet) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.c-author__links {
+  @include mq($from: tablet) {
+    flex: 1;
+    padding-left: double($base-spacing-unit);
+    margin-left: double($base-spacing-unit);
+    border-left: 1px solid $color-white;
+  }
+
+  &-item {
+    display: inline-block;
+    font-size: $font-size-tiny;
+    text-transform: uppercase;
+    letter-spacing: $global-letter-spacing;
+    line-height: $line-height-small;
+  }
+
+  &-icon {
+    vertical-align: bottom;
+    transition: $global-transition;
+
+    @include attention() {
+      fill: $color-brand;
+    }
+  }
+}

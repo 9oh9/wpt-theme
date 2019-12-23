@@ -1,0 +1,24 @@
+/*------------------------------------*\
+  Components > Related
+\*------------------------------------*/
+
+.c-related {
+  padding: $base-spacing-unit 0 0;
+  background-color: $bg-gray;
+
+  @include mq($from: tablet) {
+    padding: double($base-spacing-unit) 0 $base-spacing-unit 0;
+  }
+
+  &__title {
+    padding-bottom: half($base-spacing-unit);
+    margin-bottom: $base-spacing-unit;
+    border-bottom: 1px solid $color-border;
+    font-weight: $font-weight-medium;
+
+    @include mq($from: tablet) {
+      padding-bottom: $base-spacing-unit;
+      margin-bottom: double($base-spacing-unit);
+    }
+  }
+}

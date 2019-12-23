@@ -1,0 +1,173 @@
+/*------------------------------------*\
+  Components > Post Card
+\*------------------------------------*/
+
+.c-post-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: double($base-spacing-unit);
+  transition: $global-transition;
+
+  &-wrap {
+    display: flex;
+  }
+
+  &__media {
+    background-color: $bg-gray;
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $bg-gray;
+    border-top-left-radius: $global-border-radius;
+    border-top-right-radius: $global-border-radius;
+
+    @include mq($from: tablet) {
+      transition: opacity $global-transition ease-in-out;
+
+      &.js-fadein {
+        opacity: 0;
+      }
+
+      &.is-inview {
+        opacity: 1;
+      }
+    }
+
+    &:before {
+      transition: $global-transition;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      content: '';
+      background-color: $color-dark;
+      opacity: 0;
+      border-top-left-radius: $global-border-radius;
+      border-top-right-radius: $global-border-radius;
+    }
+
+    &:after {
+      display: block;
+      content: '';
+      width: 100%;
+      padding-bottom: 75%;
+    }
+  }
+
+  &__info {
+    display: block;
+    padding: half($base-spacing-unit) + $base-spacing-unit;
+    background-color: $bg-white;
+    border-style: solid;
+    border-color: $color-border;
+    border-width: 0 1px 1px 1px;
+
+    &--no-image {
+      border-top-width: 1px;
+      border-top-left-radius: $global-border-radius;
+      border-top-right-radius: $global-border-radius;
+    }
+
+    @include attention() {
+      text-decoration: none;
+    }
+
+    @include mq($from: tablet) {
+      flex-grow: 1;
+    }
+  }
+
+  &__title {
+    margin-bottom: half($base-spacing-unit);
+    font-weight: $font-weight-regular;
+    font-size: $font-size-base;
+    line-height: $line-height-medium;
+    transition: $global-transition;
+  }
+
+  &__excerpt {
+    margin-bottom: 0;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+  }
+
+  &:hover {
+    box-shadow: $box-shadow;
+
+    .c-post-card__image:before {
+      opacity: .1;
+    }
+
+    .c-post-card__info {
+      color: $color-gray;
+    }
+
+    .c-post-card__title {
+      color: $color-brand;
+    }
+  }
+
+  &--featured {
+    &__icon {
+      position: absolute;
+      bottom: quarter($line-height-base);
+      left: quarter($line-height-base);
+      fill: $color-white;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    padding: half($base-spacing-unit) ( half($base-spacing-unit) + $base-spacing-unit );
+    background-color: $color-white;
+    font-size: $font-size-small;
+    border-style: solid;
+    border-color: $color-border;
+    border-width: 0 1px 1px 1px;
+    border-radius: 0 0 $global-border-radius $global-border-radius;
+
+    text-transform: uppercase;
+    font-size: $font-size-tiny;
+    font-weight: $font-weight-regular;
+    letter-spacing: $global-letter-spacing;
+  }
+
+  &__icon {
+    vertical-align: middle;
+    color: $color-gray;
+  }
+
+  &__author {
+    a {
+      color: $color-gray;
+
+      @include attention() {
+        color: $color-brand;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__tags {
+    a {
+      color: $color-gray;
+
+      @include attention() {
+        color: $color-brand;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__date {
+    margin-left: auto;
+    color: $color-gray;
+  }
+}

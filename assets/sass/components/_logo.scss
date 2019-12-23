@@ -1,0 +1,31 @@
+/*------------------------------------*\
+  Components > Logo
+\*------------------------------------*/
+
+.c-logo {
+  @include mq($until: desktop) {
+    float: left;
+  }
+
+  @include mq($from: desktop) {
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__link {
+    color: $color-text;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+
+    @include attention() {
+      color: $color-brand;
+      text-decoration: none;
+    }
+  }
+
+  &__img {
+    margin: 0 auto;
+    max-height: double($base-spacing-unit);
+  }
+}

@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  Components > Widget Tags
+\*------------------------------------*/
+
+.c-widget-tags {
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: quarter($base-spacing-unit) $base-spacing-unit;
+    margin: 0 half($base-spacing-unit) (half($base-spacing-unit) + quarter($base-spacing-unit)) 0;
+
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    font-family: $font-sans-serif;
+    line-height: $line-height-small;
+
+    color: $color-gray;
+    border-radius: $global-border-radius;
+
+    border: 1px solid $color-border;
+    transition: $global-transition;
+
+    @include attention() {
+      color: $color-brand;
+      text-decoration: none;
+      background-color: $bg-gray;
+    }
+  }
+}

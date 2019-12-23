@@ -1,0 +1,24 @@
+/*------------------------------------*\
+  Components > Archive
+\*------------------------------------*/
+
+.c-archive {
+  padding: double($base-spacing-unit);
+  margin-bottom: double($base-spacing-unit);
+  background-color: $bg-gray;
+  border: 1px solid $color-border;
+  border-radius: $global-border-radius;
+
+  &__title {
+    margin-bottom: 0;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+  }
+
+  &__description {
+    margin-top: half($base-spacing-unit);
+    margin-bottom: 0;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+  }
+}

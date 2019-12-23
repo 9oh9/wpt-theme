@@ -1,0 +1,69 @@
+/*------------------------------------*\
+  Components > Tag Card
+\*------------------------------------*/
+
+.c-tag-card {
+  position: relative;
+  margin-bottom: $line-height-base;
+  background-color: $bg-gray;
+
+  &__image {
+    display: block;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-decoration: none;
+
+    @include mq($from: tablet) {
+      transition: opacity $global-transition ease-in-out;
+
+      &.js-fadein {
+        opacity: 0;
+      }
+
+      &.is-inview {
+        opacity: 1;
+      }
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      content: '';
+      transition: $global-transition;
+      background: linear-gradient(0deg, rgba($color-dark, .4) 0, transparent 32%);
+    }
+
+    &:after {
+      display: block;
+      content: '';
+      width: 100%;
+      padding-bottom: 75%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 0;
+    padding: $base-spacing-unit;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    color: $color-white;
+    text-shadow: $text-shadow;
+  }
+
+  &__count {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    .c-tag-card__image:before {
+      background-color: $bg-dark-opacity-lighter;
+    }
+  }
+}

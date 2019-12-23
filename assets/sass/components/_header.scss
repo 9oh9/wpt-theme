@@ -1,0 +1,72 @@
+/*------------------------------------*\
+  Components > Header
+\*------------------------------------*/
+
+.c-header {
+  padding: $base-spacing-unit 0;
+  min-height: quadruple($base-spacing-unit);
+  background-color: $bg-white;
+
+  .page-authors &,
+  &--has-border {
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__icon {
+    fill: $color-white;
+    vertical-align: middle;
+  }
+
+  @include mq($from: desktop) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    will-change: transform;
+    -webkit-perspective: 1000;
+    transition: transform $global-transition ease-in-out;
+
+    &--not-top {
+      border-bottom: 1px solid $color-border;
+    }
+
+    &--pinned {
+      transform: translateY(0);
+    }
+
+    &--unpinned {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+@include mq($from: desktop) {
+  .header-headroom-space {
+    margin-top: quadruple($base-spacing-unit);
+  }
+}
+
+.c-header--left-logo {
+  @include mq($from: desktop) {
+    .c-logo {
+      float: left;
+      text-align: left;
+      margin: initial;
+    }
+
+    .c-nav {
+      width: 60%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .c-social-nav {
+      width: 20%;
+    }
+
+    .c-off-canvas-content {
+      margin-top: initial;
+    }
+  }
+}

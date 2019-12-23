@@ -1,0 +1,9 @@
+/*------------------------------------*\
+  Components > Pagination
+\*------------------------------------*/
+
+.c-pagination {
+  @include mq($from: desktop) {
+    padding: double($base-spacing-unit) 0;
+  }
+}

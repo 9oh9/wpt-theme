@@ -1,0 +1,54 @@
+{{!< default}}
+
+{{#post}}
+
+{{> post-hero }}
+
+<div class='o-wrapper'>
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--center o-grid__col--3-4-m'>
+
+      <article class='c-{{ post_class }}'>
+        <div class='c-content'>
+          {{ content }}
+        </div>
+
+        <div class='o-grid'>
+          <div class='o-grid__col o-grid__col--full'>
+            {{> share }}
+          </div>
+        </div>
+
+        <hr>
+
+        {{#if @labs.subscribers }}
+          {{> subscribe-form }}
+        {{/if}}
+
+        {{#primary_author}}
+          <div class='c-author'>
+            {{#if profile_image}}
+              <div class='c-author__media'>
+                <img src='{{ profile_image }}' alt='{{ name }}' class='c-author__image'>
+              </div>
+            {{/if}}
+
+            <div class='c-author__content'>
+              <h2 class='c-author__title'><a href='{{ url }}'>{{ name }}</a></h2>
+              {{#if bio}}
+                <p class='c-author__bio'>{{ bio }}</p>
+              {{/if}}
+            </div>
+          </div>
+        {{/primary_author}}
+
+        {{> disqus}}
+      </article>
+
+    </div>
+  </div>
+</div>
+
+{{/post}}
+
+{{> related-posts}}

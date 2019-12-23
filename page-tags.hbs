@@ -1,0 +1,17 @@
+{{!< default}}
+
+{{#post}}
+
+{{> post-hero }}
+
+<div class='o-wrapper'>
+  <div class='o-grid'>
+    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+      {{#foreach tags}}
+        {{> tag-card }}
+      {{/foreach}}
+    {{/get}}
+  </div>
+</div>
+
+{{/post}}

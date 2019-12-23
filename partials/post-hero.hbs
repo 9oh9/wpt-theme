@@ -1,0 +1,15 @@
+<div class='c-post-hero' style='background-image: url({{ feature_image }})'>
+  <div class='c-post-hero__content'>
+    <h1 class='c-post-hero__title'>{{ title }}</h1>
+
+    {{#is 'post'}}
+      <time class='c-post-hero__date' datetime='{{ date format='YYYY-MM-DD' }}'>{{ date format='DD MMM YYYY' }}</time>
+
+      {{#if tags}}
+        <div class='c-tags'>
+          {{ tags separator='' }}
+        </div>
+      {{/if}}
+    {{/is}}
+  </div>
+</div>

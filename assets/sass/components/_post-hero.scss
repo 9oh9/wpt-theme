@@ -1,0 +1,99 @@
+/*------------------------------------*\
+  Components > Post Hero
+\*------------------------------------*/
+
+.c-post-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: quadruple($base-spacing-unit) $base-spacing-unit;
+
+  @include mq($from: tablet) {
+    padding: double($base-spacing-unit) $base-spacing-unit;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 33%;
+    }
+  }
+
+  @include mq($from: desktop) {
+    padding: 0;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background-color: $bg-dark-opacity;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding-right: $base-spacing-unit;
+    padding-left: $base-spacing-unit;
+    color: $color-white;
+    text-shadow: $text-shadow;
+
+    @include mq($from: tablet) {
+      max-width: 700px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: 0;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__title {
+    margin-bottom: $base-spacing-unit;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-regular;
+
+    @include mq($from: tablet) {
+      line-height: normal;
+      font-size: $font-size-h2;
+    }
+
+    @include mq($from: desktop) {
+      font-size: $font-size-h1;
+    }
+  }
+
+  &__date {
+    position: relative;
+    padding: half($base-spacing-unit) 0;
+    display: inline-block;
+    margin-bottom: $base-spacing-unit;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-small;
+    letter-spacing: $global-letter-spacing;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      left: 0;
+      height: 1px;
+      background: $bg-white;
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
+  }
+}

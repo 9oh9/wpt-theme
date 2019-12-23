@@ -1,0 +1,24 @@
+{{!< default}}
+
+<div class='c-hero' style='background-image: url({{ @site.cover_image }})'>
+  <div class='c-hero__content'>
+    <div class='c-hero__description'>
+      <h2>404</h2>
+      <p>{{t 'Page Not Found' }}</p>
+    </div>
+  </div>
+</div>
+
+<div class='o-wrapper'>
+  <div class='o-grid'>
+    {{#get 'posts' limit='6' include='authors,tags'}}
+      <div class='o-grid__col o-grid__col--full'>
+        <h4 class='u-left'>{{t 'Recent Posts' }}</h4>
+        <a href='{{ @site.url }}' class='u-right u-font-size-medium'>{{t 'Home Page' }} &#x27A3;</a>
+      </div>
+      {{#foreach posts}}
+        {{> post-card }}
+      {{/foreach}}
+    {{/get}}
+  </div>
+</div>

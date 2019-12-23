@@ -1,0 +1,37 @@
+<header class='c-header js-header
+  {{#is 'home'}}{{^if @site.cover_image}} c-header--has-border {{/if}}{{/is}}
+  {{#is 'author'}} c-header--has-border {{/is}}
+  {{#is 'paged'}} c-header--has-border {{/is}}'>
+
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--full'>
+      <div class='js-off-canvas-toggle c-off-canvas-toggle'>
+        <span class='c-off-canvas-toggle__icon'></span>
+      </div>
+      <div class='c-logo'>
+        {{#if @site.logo}}
+          <a href='{{ @site.url }}'>
+            <img class='c-logo__img' src='{{ @site.logo }}' alt='{{ @site.title }}'>
+          </a>
+        {{else}}
+          <a class='c-logo__link' href='{{ @site.url }}'>{{ @site.title }}</a>
+        {{/if}}
+      </div>
+
+      <div class='c-off-canvas-content js-off-canvas-content'>
+        <div class='js-off-canvas-toggle c-off-canvas-toggle c-off-canvas-toggle--close'>
+          <span class='c-off-canvas-toggle__icon'></span>
+        </div>
+
+        {{ navigation }}
+
+        {{> social-nav }}
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<div class='header-headroom-space'></div>
+
+{{> search-form }}
